@@ -97,6 +97,7 @@ const updatePost = async (req, res, next) => {
 const deletePost = async (req, res, next) => {
   try {
     await model.post.deleteOne({ _id: req.body.id });
+    console.log(req.body.id)
   } catch (error) {
     console.log(error);
   }
