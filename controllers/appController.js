@@ -96,8 +96,7 @@ const updatePost = async (req, res, next) => {
 
 const deletePost = async (req, res, next) => {
   try {
-    await model.user.insertMany(req.body);
-    res.send({ message: "User added successfully" });
+    await model.post.deleteOne({ _id: req.body.id });
   } catch (error) {
     console.log(error);
   }
