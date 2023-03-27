@@ -12,8 +12,8 @@ router.post("/posts/add", jsonParser, appController.addPost);
 router.get("/posts", appController.posts);
 router.get("/posts/top", appController.topPost);
 
-router.patch("/posts/update", appController.updatePost);
+router.patch("/posts/update", jsonParser, appController.updatePost);
 
-router.delete("/posts/delete", appController.deletePost);
+router.delete("/posts/delete", jsonParser, appController.deletePost);
 
 module.exports = router;
