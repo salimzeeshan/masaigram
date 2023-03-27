@@ -9,7 +9,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 const register = async (req, res, next) => {
   try {
     const users = await model.user.find({ email: req.body.email });
-    if (users) {
+    if (users.length > 0) {
       res.send({ message: "User already exist, please login" });
     } else {
       await model.user.insertMany(req.body);
